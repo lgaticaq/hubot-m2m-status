@@ -7,7 +7,7 @@ process.env.M2M_PASS = "password"
 
 class M2m
   constructor: ->
-  checkStatus: (sim) ->
+  checkSim: (sim) ->
     return new Promise (resolve, reject) ->
       if sim is "+56999999999"
         resolve({admin: true, gsm: true, gprs: true})

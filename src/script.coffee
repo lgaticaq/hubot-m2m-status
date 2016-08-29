@@ -23,7 +23,7 @@ module.exports = (robot) ->
       user: process.env.M2M_USER,
       password: process.env.M2M_PASS
     })
-    client.checkStatus(sim).then (result) ->
+    client.checkSim(sim).then (result) ->
       msg = "Administration: #{if result.admin then 'OK' else 'Error'}\n"
       msg += "GSM: #{if result.gsm then 'OK' else 'Error'}\n"
       msg += "GPRS: #{if result.gprs then 'OK' else 'Error'}"

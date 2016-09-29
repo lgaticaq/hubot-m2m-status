@@ -9,6 +9,7 @@
 #
 # Commands:
 #   hubot m2m check <sim> - Check status of sim
+#   hubot m2m check <icc> - Check status of icc
 #
 # Author:
 #   lgaticaq
@@ -17,17 +18,29 @@ m2m = require "m2m-status"
 
 module.exports = (robot) ->
   robot.respond /m2m check (\+\d{11})/, (res) ->
-    sim = res.match[1]
+    getStatus(res, "checkSim").then (result) ->
+      res.send(onResult(result))
+    .catch (err) ->
+      res.send "Error: #{err.message}"
+      robot.emit "error", err
+
+  robot.respond /m2m check (\d{19})/, (res) ->
+    getStatus(res, "checkIcc").then (result) ->
+      res.send(onResult(result))
+    .catch (err) ->
+      res.send "Error: #{err.message}"
+      robot.emit "error", err
+
+  getStatus = (res, method) ->
     res.send "Checking status..."
     client = new m2m({
       user: process.env.M2M_USER,
       password: process.env.M2M_PASS
     })
-    client.checkSim(sim).then (result) ->
-      msg = "Administration: #{if result.admin then 'OK' else 'Error'}\n"
-      msg += "GSM: #{if result.gsm then 'OK' else 'Error'}\n"
-      msg += "GPRS: #{if result.gprs then 'OK' else 'Error'}"
-      res.send(msg)
-    .catch (err) ->
-      res.send "Error: #{err.message}"
-      robot.emit "error", err
+    return client[method](res.match[1])
+
+  onResult = (result) ->
+    msg = "Administration: #{if result.admin then 'OK' else 'Error'}\n"
+    msg += "GSM: #{if result.gsm then 'OK' else 'Error'}\n"
+    msg += "GPRS: #{if result.gprs then 'OK' else 'Error'}"
+    return msg

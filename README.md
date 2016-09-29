@@ -23,6 +23,8 @@ add `["hubot-m2m-status"]` to `external-scripts.json`.
 
 `hubot m2m check <sim>` -> `Check status of sim`
 
+`hubot m2m check <icc>` -> `Check status of icc`
+
 ## License
 
 [MIT](https://tldrlegal.com/license/mit-license)

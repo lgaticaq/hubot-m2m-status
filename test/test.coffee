@@ -15,6 +15,14 @@ class M2m
         resolve({admin: false, gsm: false, gprs: false})
       else
         reject(new Error("Sim #{sim} not found or not active"))
+  checkIcc: (icc) ->
+    return new Promise (resolve, reject) ->
+      if icc is "1111111111111111111"
+        resolve({admin: true, gsm: true, gprs: true})
+      else if icc is "2222222222222222222"
+        resolve({admin: false, gsm: false, gprs: false})
+      else
+        reject(new Error("ICC #{icc} not found or not active"))
 
 proxyquire("./../src/script.coffee", {"m2m-status": M2m})
 
@@ -29,7 +37,7 @@ describe "hubot-m2m-status", ->
   afterEach ->
     room.destroy()
 
-  context "invalid", ->
+  context "sim invalid", ->
     beforeEach (done) ->
       room.user.say("user", "hubot m2m check +56111111111")
       setTimeout(done, 100)
@@ -41,7 +49,19 @@ describe "hubot-m2m-status", ->
         ["hubot", "Error: Sim +56111111111 not found or not active"]
       ])
 
-  context "valid data false", ->
+  context "icc invalid", ->
+    beforeEach (done) ->
+      room.user.say("user", "hubot m2m check 3333333333333333333")
+      setTimeout(done, 100)
+
+    it "should get a error", ->
+      expect(room.messages).to.eql([
+        ["user", "hubot m2m check 3333333333333333333"]
+        ["hubot", "Checking status..."]
+        ["hubot", "Error: ICC 3333333333333333333 not found or not active"]
+      ])
+
+  context "sim valid data false", ->
     beforeEach (done) ->
       room.user.say("user", "hubot m2m check +56888888888")
       setTimeout(done, 100)
@@ -56,7 +76,22 @@ describe "hubot-m2m-status", ->
         ["hubot", message]
       ])
 
-  context "valid data true", ->
+  context "icc valid data false", ->
+    beforeEach (done) ->
+      room.user.say("user", "hubot m2m check 2222222222222222222")
+      setTimeout(done, 100)
+
+    it "should get a sim status", ->
+      message = "Administration: Error\n"
+      message += "GSM: Error\n"
+      message += "GPRS: Error"
+      expect(room.messages).to.eql([
+        ["user", "hubot m2m check 2222222222222222222"]
+        ["hubot", "Checking status..."]
+        ["hubot", message]
+      ])
+
+  context "sim valid data true", ->
     beforeEach (done) ->
       room.user.say("user", "hubot m2m check +56999999999")
       setTimeout(done, 100)
@@ -67,6 +102,21 @@ describe "hubot-m2m-status", ->
       message += "GPRS: OK"
       expect(room.messages).to.eql([
         ["user", "hubot m2m check +56999999999"]
+        ["hubot", "Checking status..."]
+        ["hubot", message]
+      ])
+
+  context "icc valid data true", ->
+    beforeEach (done) ->
+      room.user.say("user", "hubot m2m check 1111111111111111111")
+      setTimeout(done, 100)
+
+    it "should get a sim status", ->
+      message = "Administration: OK\n"
+      message += "GSM: OK\n"
+      message += "GPRS: OK"
+      expect(room.messages).to.eql([
+        ["user", "hubot m2m check 1111111111111111111"]
         ["hubot", "Checking status..."]
         ["hubot", message]
       ])

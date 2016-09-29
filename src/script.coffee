@@ -2,7 +2,7 @@
 #   A Hubot script to check status of your m2m-status sims
 #
 # Dependencies:
-#   "simple-encryptor": "0.0.2"
+#   "m2m-status": "0.1.0"
 #
 # Configuration:
 #   M2M_USER, M2M_PASS

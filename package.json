@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/lgaticaq/hubot-m2m-status#readme",
   "dependencies": {
-    "m2m-status": "0.1.0"
+    "m2m-status": "1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

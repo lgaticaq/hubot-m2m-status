@@ -40,7 +40,7 @@ module.exports = (robot) ->
     return client[method](res.match[1])
 
   onResult = (result) ->
-    msg = "Administration: #{if result.admin then 'OK' else 'Error'}\n"
-    msg += "GSM: #{if result.gsm then 'OK' else 'Error'}\n"
-    msg += "GPRS: #{if result.gprs then 'OK' else 'Error'}"
+    msg = "Administration: #{if result.status.admin then 'OK' else 'Error'}\n"
+    msg += "GSM: #{if result.status.gsm then 'OK' else 'Error'}\n"
+    msg += "GPRS: #{if result.status.gprs then 'OK' else 'Error'}"
     return msg

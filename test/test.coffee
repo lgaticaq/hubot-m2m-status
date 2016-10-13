@@ -10,17 +10,17 @@ class M2m
   checkSim: (sim) ->
     return new Promise (resolve, reject) ->
       if sim is "+56999999999"
-        resolve({admin: true, gsm: true, gprs: true})
+        resolve({status: {admin: true, gsm: true, gprs: true}})
       else if sim is "+56888888888"
-        resolve({admin: false, gsm: false, gprs: false})
+        resolve({status: {admin: false, gsm: false, gprs: false}})
       else
         reject(new Error("Sim #{sim} not found or not active"))
   checkIcc: (icc) ->
     return new Promise (resolve, reject) ->
       if icc is "1111111111111111111"
-        resolve({admin: true, gsm: true, gprs: true})
+        resolve({status: {admin: true, gsm: true, gprs: true}})
       else if icc is "2222222222222222222"
-        resolve({admin: false, gsm: false, gprs: false})
+        resolve({status: {admin: false, gsm: false, gprs: false}})
       else
         reject(new Error("ICC #{icc} not found or not active"))
 

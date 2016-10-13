@@ -1,3 +1,16 @@
+#### 0.1.1 (2016-10-13)
+
+##### Chores
+
+* **package:**
+  * Add yarn.lock ([fe36a62f](https://github.com/lgaticaq/hubot-m2m-status/commit/fe36a62f394e2ff45baf3999facc7535c514da76))
+  * update m2m-status to version 1.0.0 ([7a979972](https://github.com/lgaticaq/hubot-m2m-status/commit/7a979972bf04f332172ef72d8340caabe4cd8c24))
+  * update codeclimate-test-reporter to version 0.4.0 ([0f094219](https://github.com/lgaticaq/hubot-m2m-status/commit/0f0942195dcb52911b44eb708ce4f9b4591d1709))
+
+##### Bug Fixes
+
+* **src:** Fix m2m-status methods ([f311f9ff](https://github.com/lgaticaq/hubot-m2m-status/commit/f311f9ffcada3b262660d506b68d78e6e41b7752))
+
 ### 0.1.0 (2016-9-29)
 
 ##### Chores

@@ -1,3 +1,33 @@
+#### 0.1.2 (2017-09-25)
+
+##### Chores
+
+* **nvm:** update node to v8 ([05e7be2a](https://github.com/lgaticaq/hubot-m2m-status/commit/05e7be2ad84da816a914f7eee33efb345c13c1a2))
+* **package:**
+  * update dependencies ([eca25c10](https://github.com/lgaticaq/hubot-m2m-status/commit/eca25c10285ca729b570514ab9cfc84a32e9bc80))
+  * update mocha to version 3.5.3 ([11b747e4](https://github.com/lgaticaq/hubot-m2m-status/commit/11b747e4d3ad1a4f8435c58ed39b7b78e6800d63))
+  * update codeclimate-test-reporter to version 0.5.0 ([57124428](https://github.com/lgaticaq/hubot-m2m-status/commit/57124428374a3cd1d5a2e8c9d22d22985bd3a0c4))
+  * update chai to version 4.0.0 ([39ee46af](https://github.com/lgaticaq/hubot-m2m-status/commit/39ee46af76f8ec04fe99baaff93eef8c3585217f))
+  * update coffee-coverage to version 2.0.0 ([3b612830](https://github.com/lgaticaq/hubot-m2m-status/commit/3b6128304b82427e0f307ba862ebb27e3b70b48f))
+* **deps:**
+  * update dependency mocha to v3.5.3 ([ae51f355](https://github.com/lgaticaq/hubot-m2m-status/commit/ae51f355165a347a5b0657ac630344ba034cfd45))
+  * update dependency mocha to v3.5.2 ([573da28b](https://github.com/lgaticaq/hubot-m2m-status/commit/573da28bdfebd98f5ddd9976b68b7914c67716b6))
+
+##### Continuous Integration
+
+* **node:** update node versions ([6be2670d](https://github.com/lgaticaq/hubot-m2m-status/commit/6be2670d3b42695c30dc032f0bf45604996f4845))
+
+##### Documentation Changes
+
+* **LICENSE:** update year ([4a10dc5a](https://github.com/lgaticaq/hubot-m2m-status/commit/4a10dc5a7d8d3e5af74e0480de4ac00fa8ede719))
+
+##### Refactors
+
+* **js:** migrate coffee to js ([0a44c6b3](https://github.com/lgaticaq/hubot-m2m-status/commit/0a44c6b3fc3eb7442f2afab388ed02c692f6da6d))
+* **deps:**
+  * renovate pin dependencies packages ([dd70b9b5](https://github.com/lgaticaq/hubot-m2m-status/commit/dd70b9b57a20dd8f93f19258e4d381e8d9c5f16e))
+  * renovate pin dependencies packages ([e2d714c2](https://github.com/lgaticaq/hubot-m2m-status/commit/e2d714c2c7e8cd94874f59e5e73ca2a3ae2f237d))
+
 #### 0.1.1 (2016-10-13)
 
 ##### Chores

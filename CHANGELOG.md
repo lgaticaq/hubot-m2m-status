@@ -1,3 +1,21 @@
+# [1.0.0](https://github.com/lgaticaq/hubot-m2m-status/compare/v0.1.2...v1.0.0) (2018-09-22)
+
+
+### Bug Fixes
+
+* **deps:** fix vulnerabilities ([0c5ec2f](https://github.com/lgaticaq/hubot-m2m-status/commit/0c5ec2f))
+* **deps:** update dependency coffee-script to v1.12.7 ([072e704](https://github.com/lgaticaq/hubot-m2m-status/commit/072e704))
+
+
+### chore
+
+* **node:** update min node version to v8 ([515dff1](https://github.com/lgaticaq/hubot-m2m-status/commit/515dff1))
+
+
+### BREAKING CHANGES
+
+* **node:** set min node version to v8
+
 #### 0.1.2 (2017-09-25)
 
 ##### Chores

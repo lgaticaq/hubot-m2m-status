@@ -42,7 +42,6 @@
     "@semantic-release/git": "7.0.4",
     "@semantic-release/npm": "5.0.4",
     "chai": "4.1.2",
-    "coffee-script": "1.12.7",
     "eslint": "5.6.0",
     "eslint-config-standard": "12.0.0",
     "eslint-plugin-import": "2.14.0",

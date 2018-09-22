@@ -2,7 +2,7 @@
 
 const Helper = require('hubot-test-helper')
 const { expect } = require('chai')
-const proxyquire = require('proxyquire')
+const mock = require('mock-require')
 
 process.env.M2M_USER = 'user'
 process.env.M2M_PASS = 'password'
@@ -36,7 +36,7 @@ class M2m {
   }
 }
 
-proxyquire('./../src/script.js', { 'm2m-status': M2m })
+mock('m2m-status', M2m)
 
 const helper = new Helper('./../src/index.js')
 

@@ -35,7 +35,7 @@
     "m2m-status": "^1.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "7.5.0",
+    "@commitlint/cli": "7.5.1",
     "@commitlint/config-conventional": "7.5.0",
     "@commitlint/prompt-cli": "7.5.0",
     "@semantic-release/changelog": "3.0.2",
